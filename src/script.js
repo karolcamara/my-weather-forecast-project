@@ -38,6 +38,16 @@ function search(city) {
     axios.get(apiUrl).then(displayWeatherCondition);
 }
 
+//function displayExtraDays(response) {
+  //document.querySelector("#day1").innerHTML = Math.round(response.data.main.temp_max);
+//}
+
+//function newSearch(city) {
+  //let apiKey = "60ad999468395538cd607575dc0c5650";
+  //let units = "metric";
+  //let extraUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  //axios.get(extraUrl).then(displayExtraDays);
+//}
 
 function changeCity(event) {
     event.preventDefault();
