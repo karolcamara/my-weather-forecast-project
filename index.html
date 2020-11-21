@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirational Weather Forecast</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a62ea4b83a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body class="background">
+    <div class="container">
+        <h1></h1>
+        <p class="time" id="time">Thursday 5:00</p>
+        <h2>
+            <spam id="graus"></spam>
+            <spam class="temperature"> <a href="#" id="celsius">°C </a> | <a href="#" id="farenheit">°F</a><br></spam>
+            <span class="mainIcon"> <i class="fas fa-sun"></i></span>
+        </h2>
+        </br>
+        <div class="centralize">
+            <ul>
+                <li>Feels like: <span id="feels"></span>°</li>
+                <li>High: <span id="max"></span>° | Low: <span id="min"></span>°</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
+        </div>
+        <form id="form-input">
+            <input class="rounded-pill" type="text" placeholder="How is the weather in..." id="city-input">
+            <button type="submit" id="button-input"><i class="fa fa-search-location"></i> </button>
+            <button type="submit" id="button-current"><i class="fas fa-location-arrow"></i></i> </button>
+
+        </form>
+
+        <div class="card thoughts">
+            <div class="card-body">
+                <p> Quote of the day
+                    <br>
+                    <small><em>"Today is a new beginning"</em></small>
+                </p>
+            </div>
+        </div>
+        </br>
+        </br>
+        <p class="forecast">5-day weather forecast</p>
+        <div class="row">
+            <div class="col card">Tue<br> <span class="sunRain"> <i class="fas fa-cloud-sun-rain"></i></span> <br>
+                <small>18°|25°C</small> </div>
+            <div class="col card">Wed <br> <span class="sunIcon"> <i class="fas fa-sun"></i></span> <br>
+                <small>15°|24°C</small> </div>
+            <div class="col card">Thu <br> <span class="snow"> <i class="fas fa-snowflake"></i></span> <br>
+                <small>10°|20°C</small> </div>
+            <div class="col card">Fri <br> <span class="rain"> <i class="fas fa-cloud-showers-heavy"></i></span> <br>
+                <small>11°|23C°</small> </div>
+            <div class="col card">Sat <br> <span class="smog"> <i class="fas fa-smog"></i></span> <br>
+                <small>18°|26°C</small> </div>
+        </div>
+        </br>
+        <p class=footer>Coded by <a href="http://www.instagram.com/karolcamara" target="_blank">Karol Camara</a></p>
+    </div>
+    <script src="src/script.js"></script>
+</body>
+
+</html>
