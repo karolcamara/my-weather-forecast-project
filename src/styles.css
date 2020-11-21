@@ -1,0 +1,147 @@
+.background {
+  background-image: url("/Users/kcamara/Homework2/images/3882967.jpg");
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-size: cover;
+}
+
+.background::before {
+  content: " ";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgb(251, 249, 249, 0.6);
+  background-size: cover;
+}
+h1 {
+  color: #d46e7c;
+  margin-top: 15px;
+  margin-left: 20px;
+  font-family: "Indie Flower", cursive;
+}
+h2 {
+  color: #243838;
+  margin-left: 60px;
+  font-family: "Open Sans", sans-serif;
+}
+form {
+  float: right;
+  border-radius: 8px;
+  margin-top: -250px;
+  margin-right: 39px;
+  font-family: "Indie Flower", cursive;
+}
+
+li {
+  color: #243838;
+  list-style-type: none;
+  margin-left: 30px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0;
+}
+.thoughts {
+  color: #243838;
+  width: fit-content;
+  float: right;
+  margin-top: -150px;
+  margin-right: 65px;
+  border-radius: 15px;
+  box-shadow: 0.5px 0.5px 6.5px 6.5px #d46e7c;
+  border-style: none;
+  background-color: #fdfbfb;
+}
+.rounded-pill {
+  width: 180px;
+  border-color: #d46e7c;
+}
+.container {
+  position: relative;
+  width: 700px;
+  height: 450px;
+  margin-top: 200px;
+  background-color: #8bd7d7;
+  border-radius: 15px;
+  margin-bottom: 400px;
+  box-shadow: 5px 5px 20px 20px white;
+}
+.row {
+  text-align: center;
+}
+
+.col {
+  background-color: #f6dfb5;
+  margin: 0 auto;
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  color: #243838;
+  font-weight: 400;
+}
+.footer {
+  text-align: right;
+  font-size: 10px;
+  font-family: monospace;
+  margin-bottom: 0px;
+}
+.forecast {
+  font-family: "Indie Flower", cursive;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-bottom: 0px;
+  color: #d46e7c;
+}
+
+.centralize {
+  text-align: center;
+  width: 210px;
+  height: 96px;
+}
+
+.mainIcon {
+  color: #f7a11e;
+  margin-left: 36px;
+}
+.col:hover {
+  color: #9eceec;
+}
+
+.sunIcon {
+  color: #f7a11e;
+}
+.rain {
+  color: #399fe3;
+}
+.snow {
+  color: #f9f9f9;
+}
+.smog {
+  color: #ef7f8a;
+}
+.sunRain {
+  color: #50dfff;
+}
+button {
+  border-style: none;
+  color: #d46e7c;
+  background-color: #8bd7d7;
+  font-size: 20px;
+}
+.time {
+  color: rgb (135, 135, 135);
+  margin-left: 55px;
+  margin-top: 0;
+  font-family: "Open Sans", sans-serif;
+  color: grey;
+  position: relative;
+  top: -10px;
+  font-weight: 300;
+}
+.temperature {
+  font-size: 15px;
+  position: relative;
+  top: -10px;
+}
