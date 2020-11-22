@@ -38,8 +38,9 @@ function displayWeatherCondition(response) {
   document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#time").innerHTML = formatDate(response.data.dt *1000);
-  document.querySelector("#icon").setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
+  document.querySelector("#icon").setAttribute ("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
   document.querySelector("#icon").setAttribute ("alt", response.data.weather[0].description);
+  document.querySelector("#description").innerHTML = response.data.weather[0].description;
 }
 
 function search(city) {

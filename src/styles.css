@@ -43,6 +43,7 @@ li {
   font-size: 15px;
   font-weight: 300;
   padding: 0;
+  text-transform: capitalize;
 }
 
 ul {
@@ -102,7 +103,8 @@ ul {
 }
 
 .mainIcon {
-  width: 90px;
+  width: 50px;
+  margin-left: 28px;
 }
 .col:hover {
   color: #9eceec;
@@ -130,7 +132,6 @@ button {
   font-size: 20px;
 }
 .time {
-  color: rgb (135, 135, 135);
   margin-left: 12px;
   margin-top: 0;
   font-family: "Open Sans", sans-serif;
@@ -144,3 +145,4 @@ button {
   position: relative;
   top: -10px;
 }
+
