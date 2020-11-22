@@ -101,10 +101,8 @@ ul {
   color: #d46e7c;
 }
 
-
 .mainIcon {
-  color: #f7a11e;
-  margin-left: 30px;
+  width: 90px;
 }
 .col:hover {
   color: #9eceec;
