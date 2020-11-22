@@ -49,7 +49,7 @@ function displayExtraDays(response) {
 function searchExtraDays(city) {
   let apiKey = "60ad999468395538cd607575dc0c5650";
   let units = "metric";
-  let extraUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  let extraUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
 axios.get(extraUrl).then(displayExtraDays);
 }
 
