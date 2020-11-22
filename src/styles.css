@@ -19,12 +19,12 @@
 h1 {
   color: #d46e7c;
   margin-top: 15px;
-  margin-left: 20px;
+  margin-left: 10px;
   font-family: "Indie Flower", cursive;
 }
 h2 {
   color: #243838;
-  margin-left: 60px;
+  margin-left: 10px;
   font-family: "Open Sans", sans-serif;
 }
 form {
@@ -38,10 +38,14 @@ form {
 li {
   color: #243838;
   list-style-type: none;
-  margin-left: 30px;
+  margin-left: 10px;
   font-family: "Open Sans", sans-serif;
   font-size: 15px;
   font-weight: 300;
+  padding: 0;
+}
+
+ul {
   padding: 0;
 }
 .thoughts {
@@ -49,15 +53,16 @@ li {
   width: 250px;
   float: right;
   margin-top: -150px;
-  margin-right: 65px;
+  margin-right: 80px;
   border-radius: 15px;
-  box-shadow: 0.5px 0.5px 6.5px 6.5px #d46e7c;
+  box-shadow: 0.3px 0.3px 6px 6px #d46e7c;
   border-style: none;
   background-color: #fdfbfb;
   text-align: center;
+  text-size-adjust: auto;
 }
 .rounded-pill {
-  width: 180px;
+  width: 210px;
   border-color: #d46e7c;
 }
 .container {
@@ -96,15 +101,10 @@ li {
   color: #d46e7c;
 }
 
-.centralize {
-  text-align: center;
-  width: 210px;
-  height: 96px;
-}
 
 .mainIcon {
   color: #f7a11e;
-  margin-left: 36px;
+  margin-left: 30px;
 }
 .col:hover {
   color: #9eceec;
@@ -133,7 +133,7 @@ button {
 }
 .time {
   color: rgb (135, 135, 135);
-  margin-left: 55px;
+  margin-left: 12px;
   margin-top: 0;
   font-family: "Open Sans", sans-serif;
   color: grey;
