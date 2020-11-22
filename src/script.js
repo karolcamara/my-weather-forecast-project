@@ -1,8 +1,22 @@
 //Date
 
-function formatDate(timestamp) {
+function formatDate(date, timezone) {
+  let localOffsetInMs = date.getTimezoneOffset() * 60 * 1000;
+  let targetOffsetInMs = timezone * 1000;
+  let targetTimestamp = date.getTime() + localOffsetInMs + targetOffsetInMs;
+  let now = new Date(targetTimestamp);
 
-let now = new Date(timestamp);
+  let hours = now.getHours();
+  if (hours <10) {
+  hours = `0${hours}`;
+  }
+
+let minutes = now.getMinutes();
+if (minutes <10) {
+minutes = `0${minutes}`;
+}
+
+let dayIndex = now.getDay();
 
 let days = [
   "Sunday",
@@ -13,18 +27,10 @@ let days = [
   "Friday",
   "Saturday"
 ];
-let day = days[now.getDay()];
-let hours = now.getHours();
-if (hours <10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes <10) {
-  minutes = `0${minutes}`;
-}
-
+let day = days[dayIndex];
 return `${day} ${hours}:${minutes}`;
 }
+
 
 //Weather API
 
@@ -37,7 +43,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#graus").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#time").innerHTML = formatDate(response.data.dt *1000);
+  document.querySelector("#time").innerHTML = formatDate(new Date(), response.data.timezone);
   document.querySelector("#icon").setAttribute ("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
   document.querySelector("#icon").setAttribute ("alt", response.data.weather[0].description);
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
