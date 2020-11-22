@@ -38,21 +38,26 @@ function search(city) {
     axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-//function displayExtraDays(response) {
-  //document.querySelector("#day1").innerHTML = Math.round(response.data.main.temp_max);
-//}
+function displayExtraDays(response) {
+  document.querySelector("#day1").innerHTML = Math.round(response.data.list[7].main.temp);
+    document.querySelector("#day2").innerHTML = Math.round(response.data.list[14].main.temp);
+      document.querySelector("#day3").innerHTML = Math.round(response.data.list[22].main.temp);
+        document.querySelector("#day4").innerHTML = Math.round(response.data.list[30].main.temp);
+          document.querySelector("#day5").innerHTML = Math.round(response.data.list[38].main.temp);
+}
 
-//function newSearch(city) {
-  //let apiKey = "60ad999468395538cd607575dc0c5650";
-  //let units = "metric";
-  //let extraUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
-  //axios.get(extraUrl).then(displayExtraDays);
-//}
+function searchExtraDays(city) {
+  let apiKey = "60ad999468395538cd607575dc0c5650";
+  let units = "metric";
+  let extraUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+axios.get(extraUrl).then(displayExtraDays);
+}
 
 function changeCity(event) {
     event.preventDefault();
      let city = document.querySelector("#city-input").value;
      search(city);
+     searchExtraDays(city);
     
 }
 
@@ -75,6 +80,7 @@ let currentLocationButton = document.querySelector("#button-current");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 search("Rio de Janeiro");
+searchExtraDays("Rio de Janeiro");
 
 
 //Bonus Feature
