@@ -46,7 +46,7 @@ li {
 }
 .thoughts {
   color: #243838;
-  width: fit-content;
+  width: 250px;
   float: right;
   margin-top: -150px;
   margin-right: 65px;
@@ -54,6 +54,7 @@ li {
   box-shadow: 0.5px 0.5px 6.5px 6.5px #d46e7c;
   border-style: none;
   background-color: #fdfbfb;
+  text-align: center;
 }
 .rounded-pill {
   width: 180px;

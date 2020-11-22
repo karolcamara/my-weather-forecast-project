@@ -77,8 +77,6 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 search("Rio de Janeiro");
 
 
-
-
 //Bonus Feature
 
 function tempCelsius (event) {
@@ -96,3 +94,17 @@ function tempFaren (event) {
 }
 let clickfaren = document.querySelector("#farenheit");
 clickfaren.addEventListener("click", tempFaren);
+
+//Quote API
+
+function showQuote (response) {
+  document.querySelector("#quote").innerHTML = response.data.contents.quotes[0].quote;
+}
+
+function get_quote_of_the_day() {
+    let quoteUrl = "https://quotes.rest/qod?category=inspire"
+   axios.get(quoteUrl).then(showQuote);
+}
+
+get_quote_of_the_day();
+
