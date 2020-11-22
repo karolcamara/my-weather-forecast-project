@@ -1,6 +1,8 @@
-//Feature #1
+//Date
 
-let now = new Date();
+function formatDate(timestamp) {
+
+let now = new Date(timestamp);
 
 let days = [
   "Sunday",
@@ -12,11 +14,17 @@ let days = [
   "Saturday"
 ];
 let day = days[now.getDay()];
-let hour = now.getHours();
+let hours = now.getHours();
+if (hours <10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
+if (minutes <10) {
+  minutes = `0${minutes}`;
+}
 
-let time = document.querySelector("#time");
-time.innerHTML = `${day} ${hour}:${minutes}`;
+return `${day} ${hours}:${minutes}`;
+}
 
 //Weather API
 
@@ -29,6 +37,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#graus").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector("#time").innerHTML = formatDate(response.data.dt *1000);
 }
 
 function search(city) {
@@ -40,10 +49,10 @@ function search(city) {
 
 function displayExtraDays(response) {
   document.querySelector("#day1").innerHTML = Math.round(response.data.list[7].main.temp);
-    document.querySelector("#day2").innerHTML = Math.round(response.data.list[14].main.temp);
-      document.querySelector("#day3").innerHTML = Math.round(response.data.list[22].main.temp);
-        document.querySelector("#day4").innerHTML = Math.round(response.data.list[30].main.temp);
-          document.querySelector("#day5").innerHTML = Math.round(response.data.list[38].main.temp);
+  document.querySelector("#day2").innerHTML = Math.round(response.data.list[14].main.temp);
+  document.querySelector("#day3").innerHTML = Math.round(response.data.list[22].main.temp);
+  document.querySelector("#day4").innerHTML = Math.round(response.data.list[30].main.temp);
+  document.querySelector("#day5").innerHTML = Math.round(response.data.list[38].main.temp);
 }
 
 function searchExtraDays(city) {
