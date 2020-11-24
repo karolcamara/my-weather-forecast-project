@@ -47,6 +47,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#icon").setAttribute ("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
   document.querySelector("#icon").setAttribute ("alt", response.data.weather[0].description);
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
+  celsiusTemperature = Math.round(response.data.main.temp);
 }
 
 function search(city) {
@@ -101,23 +102,29 @@ search("Rio de Janeiro");
 searchExtraDays("Rio de Janeiro");
 
 
-//Bonus Feature
+//Unit conversion
 
 function tempCelsius (event) {
     event.preventDefault();
-    let temperature = document.querySelector("#graus");
-    temperature.innerHTML = `19`;
+    let celsiusTemp = celsiusTemperature
+    let temperatureElement = document.querySelector("#graus");
+    temperatureElement.innerHTML = celsiusTemp;
 }
+
 let clickcelsius = document.querySelector("#celsius");
 clickcelsius.addEventListener("click", tempCelsius);
 
 function tempFaren (event) {
     event.preventDefault();
-    let temperature = document.querySelector("#graus");
-    temperature.innerHTML = `66`;
+    let farenTemperature = (celsiusTemperature * 9) / 5 + 32;
+    let temperatureElement = document.querySelector("#graus");
+    temperatureElement.innerHTML = Math.round(farenTemperature);
 }
+
 let clickfaren = document.querySelector("#farenheit");
 clickfaren.addEventListener("click", tempFaren);
+
+let celsiusTemperature = null;
 
 //Quote API
 
