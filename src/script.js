@@ -29,11 +29,11 @@ let days = [
 ];
 let day = days[dayIndex];
 return `${day} ${hours}:${minutes}`;
+
 }
 
 
 //Weather API
-
 
 function displayWeatherCondition(response) {
   document.querySelector("h1").innerHTML = response.data.name;
@@ -55,28 +55,35 @@ function search(city) {
     let units = "metric";
      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayWeatherCondition);
+
+    //Forecast
+     let extraUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+axios.get(extraUrl).then(displayExtraDays);
 }
 
 function displayExtraDays(response) {
   document.querySelector("#day1").innerHTML = Math.round(response.data.list[7].main.temp);
+  document.querySelector("#iconday1").setAttribute ("src",`http://openweathermap.org/img/wn/${response.data.list[7].weather[0].icon}@2x.png`
+  );
   document.querySelector("#day2").innerHTML = Math.round(response.data.list[14].main.temp);
+  document.querySelector("#iconday2").setAttribute ("src",`http://openweathermap.org/img/wn/${response.data.list[14].weather[0].icon}@2x.png`
+  );
   document.querySelector("#day3").innerHTML = Math.round(response.data.list[22].main.temp);
+  document.querySelector("#iconday3").setAttribute ("src",`http://openweathermap.org/img/wn/${response.data.list[22].weather[0].icon}@2x.png`
+  );
   document.querySelector("#day4").innerHTML = Math.round(response.data.list[30].main.temp);
+  document.querySelector("#iconday4").setAttribute ("src",`http://openweathermap.org/img/wn/${response.data.list[30].weather[0].icon}@2x.png`
+  );
   document.querySelector("#day5").innerHTML = Math.round(response.data.list[38].main.temp);
+  document.querySelector("#iconday5").setAttribute ("src",`http://openweathermap.org/img/wn/${response.data.list[38].weather[0].icon}@2x.png`
+  );
 }
 
-function searchExtraDays(city) {
-  let apiKey = "60ad999468395538cd607575dc0c5650";
-  let units = "metric";
-  let extraUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
-axios.get(extraUrl).then(displayExtraDays);
-}
 
 function changeCity(event) {
     event.preventDefault();
      let city = document.querySelector("#city-input").value;
      search(city);
-     searchExtraDays(city);
     
 }
 
@@ -99,7 +106,6 @@ let currentLocationButton = document.querySelector("#button-current");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 search("Rio de Janeiro");
-searchExtraDays("Rio de Janeiro");
 
 
 //Unit conversion
