@@ -43,7 +43,10 @@ li {
   font-size: 15px;
   font-weight: 300;
   padding: 0;
-  text-transform: capitalize;
+}
+
+li:first-letter {
+    text-transform: uppercase;
 }
 
 ul {
