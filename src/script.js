@@ -29,8 +29,42 @@ let days = [
 ];
 let day = days[dayIndex];
 return `${day} ${hours}:${minutes}`;
+}
+
+function nameForecast() {
+
+let now = new Date;
+let extraDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat","Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+let days2 = extraDays[now.getDay() + 1];
+let days3 = extraDays[now.getDay() + 2];
+let days4 = extraDays[now.getDay() + 3];
+let days5 = extraDays[now.getDay() + 4];
+let days6 = extraDays[now.getDay() + 5];
+
+
+let daytwo = document.querySelector("#weekday1");
+daytwo.innerHTML = `${days2}`;
+
+let daythree = document.querySelector("#weekday2");
+daythree.innerHTML = `${days3}`;
+
+let dayfour = document.querySelector("#weekday3");
+dayfour.innerHTML = `${days4}`;
+
+let dayfive = document.querySelector("#weekday4");
+dayfive.innerHTML = `${days5}`;
+
+let daysix = document.querySelector("#weekday5");
+daysix.innerHTML = `${days6}`;
 
 }
+nameForecast();
+
+
+
+
+
 
 
 //Weather API
