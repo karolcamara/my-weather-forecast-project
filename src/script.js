@@ -64,9 +64,6 @@ nameForecast();
 
 
 
-
-
-
 //Weather API
 
 function displayWeatherCondition(response) {
@@ -82,6 +79,8 @@ function displayWeatherCondition(response) {
   document.querySelector("#icon").setAttribute ("alt", response.data.weather[0].description);
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
   celsiusTemperature = Math.round(response.data.main.temp);
+
+
 }
 
 function search(city) {
@@ -126,6 +125,10 @@ function searchLocation(position) {
        let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(displayWeatherCondition);
+
+let apiUrlHourly = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrlHourly).then(displayExtraDays);
+  console.log(apiUrlHourly);
   }
 
 function getCurrentLocation(event){
