@@ -63,12 +63,16 @@ ul {
   border-style: none;
   background-color: #fdfbfb;
   text-align: center;
-  text-size-adjust: auto;
+  height: 140px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+
 }
 .rounded-pill {
   width: 210px;
   border-color: #d46e7c;
 }
+
 .container {
   position: relative;
   width: 700px;
