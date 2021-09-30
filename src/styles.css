@@ -31,7 +31,6 @@ form {
   float: right;
   border-radius: 8px;
   margin-top: -250px;
-  margin-right: 39px;
   font-family: "Indie Flower", cursive;
 }
 
@@ -54,10 +53,10 @@ ul {
 }
 .thoughts {
   color: #243838;
-  width: 250px;
+  width: 40%;
   float: right;
   margin-top: -150px;
-  margin-right: 80px;
+  margin-right: 23px;
   border-radius: 15px;
   box-shadow: 0.3px 0.3px 6px 6px #d46e7c;
   border-style: none;
@@ -65,7 +64,7 @@ ul {
   text-align: center;
   height: 140px;
   overflow-y:scroll;
-  overflow-x:hidden;
+  overflow-x:scroll;
 
 }
 .rounded-pill {
@@ -75,7 +74,8 @@ ul {
 
 .container {
   position: relative;
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
   height: 450px;
   margin-top: 200px;
   background-color: #8bd7d7;
@@ -136,7 +136,7 @@ button {
   border-style: none;
   color: #d46e7c;
   background-color: #8bd7d7;
-  font-size: 20px;
+  font-size: 18px;
 }
 .time {
   margin-left: 12px;
